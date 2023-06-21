@@ -21,8 +21,6 @@ public:
     }
     
     int get(int key) {
-        int exists = false;
-        
         if (map.empty()) 
             return -1;
         
