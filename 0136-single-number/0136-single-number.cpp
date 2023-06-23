@@ -1,17 +1,17 @@
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-        unordered_map<int, int> counts;
+        sort(nums.begin(), nums.end());
+        int n = nums.size();
+        int i = 0;
         
-        for (int i=0; i<nums.size(); ++i) {
-            ++counts[nums[i]];
+        while (i<n-1) {
+            if (nums[i] != nums[i+1]) {
+                return nums[i];
+            }
+            i += 2;
         }
         
-        for (auto count : counts) {
-            if (count.second == 1) 
-                return count.first;
-        }
-        
-        return 0;
+        return nums[n-1];
     }
 };
