@@ -4,7 +4,7 @@ public:
         vector<vector<int>> ret(numRows);
         
         for (int r=0; r<numRows; ++r) {
-            ret[r].resize(r+1);
+            ret[r].resize(r+1); // each row r (0-indexed) has r+1 columns
             ret[r][0] = 1; // first col always 1
             for (int c=1; c<r; ++c) { // loop through middle cols 
                 ret[r][c] = ret[r-1][c-1] + ret[r-1][c];
