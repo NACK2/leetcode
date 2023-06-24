@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool checkIfPangram(string sentence) {
-        sort(sentence.begin(), sentence.end());
+        // sort(sentence.begin(), sentence.end());
         unordered_map<char, int> counts;
         
         for (int i=0; i<sentence.length(); ++i) {
