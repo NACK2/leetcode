@@ -19,7 +19,7 @@ public:
         double avg = 0.0;
         
         q.push(root);
-        while (!q.empty()) { // level order traversal
+        while (!q.empty()) { // level order traversal :D
             avg = 0.0;
             size = q.size();
             for (int i=0; i<size; ++i) {
