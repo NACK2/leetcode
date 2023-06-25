@@ -9,7 +9,6 @@ public:
                 nums[i] /= 10; 
                 ++tmp;
             }
-            
             if (tmp % 2 == 0)
                 ++count;
             
