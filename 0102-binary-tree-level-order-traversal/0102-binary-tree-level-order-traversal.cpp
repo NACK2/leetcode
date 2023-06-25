@@ -15,7 +15,6 @@ public:
         vector<vector<int>> ret;
         TreeNode *curr = NULL;
         int size = 0;
-        int outerI = 1;
         int innerI = 0;
         queue<TreeNode*> q;
         
@@ -23,7 +22,7 @@ public:
             q.push(root);
         while (!q.empty()) {
             size = q.size();
-            ret.resize(outerI);
+            ret.resize(innerI + 1);
             for (int i=0; i<size; ++i) {
                 curr = q.front();
                 q.pop();
@@ -34,7 +33,6 @@ public:
                     q.push(curr->right);
             }
             ++innerI;
-            ++outerI;
         }
         
         return ret;
