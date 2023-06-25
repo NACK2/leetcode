@@ -15,24 +15,24 @@ public:
         vector<vector<int>> ret;
         TreeNode *curr = NULL;
         int size = 0;
-        int innerI = 0;
+        int index = 0;
         queue<TreeNode*> q;
         
         if (root)
             q.push(root);
         while (!q.empty()) {
             size = q.size();
-            ret.resize(innerI + 1);
+            ret.resize(index + 1);
             for (int i=0; i<size; ++i) {
                 curr = q.front();
                 q.pop();
-                ret[innerI].push_back(curr->val);
+                ret[index].push_back(curr->val);
                 if (curr->left) 
                     q.push(curr->left);
                 if (curr->right) 
                     q.push(curr->right);
             }
-            ++innerI;
+            ++index;
         }
         
         return ret;
