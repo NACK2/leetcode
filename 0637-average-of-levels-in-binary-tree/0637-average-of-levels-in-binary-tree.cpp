@@ -14,25 +14,26 @@ public:
     vector<double> averageOfLevels(TreeNode* root) {
         vector<double> ret;
         queue<TreeNode*> q;
-        TreeNode *curr = NULL;
-        int size = 0;
+        int size = q.size();
         double avg = 0.0;
+        TreeNode* curr = NULL;
         
         q.push(root);
-        while (!q.empty()) { // level order traversal :D
-            avg = 0.0;
+        while (!q.empty()) { // similar to level order traversal
             size = q.size();
-            for (int i=0; i<size; ++i) {
+            avg = 0.0;
+            for (int i=0; i<size; ++i)
+            {
                 curr = q.front();
-                avg += curr->val;
                 q.pop();
-                if (curr->left) 
+                avg += curr->val;
+                if (curr->left)
                     q.push(curr->left);
                 if (curr->right)
                     q.push(curr->right);
-            }
+            }   
             ret.push_back(avg/size);
-        } 
+        }
         
         return ret;
     }
