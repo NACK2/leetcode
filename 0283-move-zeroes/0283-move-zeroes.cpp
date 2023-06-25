@@ -7,7 +7,7 @@ public:
             if (!nums[i]) {
                 ++count;
                 nums.erase(nums.begin()+i);
-                --i; // move index back bc erased element
+                --i; // move i back bc erased element
             }
         }
         
