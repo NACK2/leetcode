@@ -6,12 +6,13 @@ public:
 
         for (int i=0; i<nums.size(); ++i) {
             while (nums[i] > 0) {
-                nums[i] /= 10;
+                nums[i] /= 10; 
                 ++tmp;
             }
             
             if (tmp % 2 == 0)
                 ++count;
+            
             tmp = 0;
         }
         
