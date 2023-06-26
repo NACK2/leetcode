@@ -11,7 +11,7 @@ public:
         sort(tmp.begin(), tmp.end());
         int n = tmp.size();
         
-        // if odd size return middle element, 
+        // if odd size return middle element 
         // if even return median of two middle elements
         return n%2==1 ? tmp[n/2] : (tmp[n/2] + tmp[n/2-1])/2.0; 
     }
