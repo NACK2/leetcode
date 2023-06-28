@@ -16,7 +16,6 @@ public:
         
         ListNode *curr = head;
         ListNode *toDel = NULL;
-        
         while (curr->next) {
             if (curr->next->val == val) {
                 toDel = curr->next;
