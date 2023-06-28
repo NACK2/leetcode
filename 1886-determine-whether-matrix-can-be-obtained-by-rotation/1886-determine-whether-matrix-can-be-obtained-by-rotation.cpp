@@ -4,7 +4,7 @@ public:
         if (mat == target)
             return true;
         
-        // col and row are same bc its n x n matrix
+        // col and row same bc its n x n matrix
         int n = mat.size();
         vector<vector<int>> tmp(n, vector<int>(n));
         
