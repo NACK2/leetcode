@@ -16,7 +16,7 @@ public:
         int size = 0;
         int i=0;
         
-        while (curr) { // get size
+        while (curr) { // size
             ++size;
             curr = curr->next;
         }
