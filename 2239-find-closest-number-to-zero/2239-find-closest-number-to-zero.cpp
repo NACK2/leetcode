@@ -6,7 +6,7 @@ public:
         for (int i=0; i<nums.size(); ++i) {
             if (abs(nums[i]) < absMin) {
                 absMin = abs(nums[i]);
-                ret = nums[i];
+                ret = nums[i]; // number closest to zero (but didn't abs value it)
             }
             else if (abs(nums[i]) == absMin) {
                 if (nums[i] > ret) 
