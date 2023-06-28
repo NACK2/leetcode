@@ -16,24 +16,23 @@ public:
         int size = 0;
         int i=0;
         
-        while (curr) {
+        while (curr) { // get size
             ++size;
             curr = curr->next;
         }
-        if (size - n == 0) {
+        if (size - n == 0) { // if we have to remove first node
             toDel = head;
             head = head->next;
             delete toDel;
             return head;
         }
         
-        size = size - n - 1;
+        size = size - n - 1; // making size 1 before the node we have to remove
         curr = head;
         while (i < size) {
             curr = curr->next;
             ++i;
         }
-        
         toDel = curr->next;
         curr->next = toDel->next;
         delete toDel;
