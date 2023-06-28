@@ -15,6 +15,7 @@ public:
         ListNode *next = NULL;
         ListNode *prev = NULL;
         int n = 0;
+        int i = 0;
         vector<int> counts;
         
         while (curr) { // get size
@@ -23,7 +24,6 @@ public:
         }
         
         curr = head;
-        int i = 0;
         while (i < n/2) { // add the first n/2 elements into vector
             counts.push_back(curr->val);
             curr = curr->next;
