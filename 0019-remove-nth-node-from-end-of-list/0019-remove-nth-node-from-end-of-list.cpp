@@ -20,7 +20,7 @@ public:
             ++size;
             curr = curr->next;
         }
-        if (size - n == 0) { // remove first node
+        if (size - n == 0) { // for removing first node
             toDel = head;
             head = head->next;
             delete toDel;
