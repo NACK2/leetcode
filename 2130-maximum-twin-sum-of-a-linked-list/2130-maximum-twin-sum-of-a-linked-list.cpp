@@ -24,7 +24,7 @@ public:
         
         curr = head;
         int i = 0;
-        while (i < n/2) { // adding the first n/2 elements into vector
+        while (i < n/2) { // add the first n/2 elements into vector
             counts.push_back(curr->val);
             curr = curr->next;
             ++i;
