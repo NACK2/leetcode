@@ -31,7 +31,7 @@ public:
         }
         
         curr = head;
-        while (curr) { // reversing list
+        while (curr) { // reverse list
             next = curr->next;
             curr->next = prev;
             prev = curr;
