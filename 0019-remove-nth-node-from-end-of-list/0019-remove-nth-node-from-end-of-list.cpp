@@ -27,7 +27,7 @@ public:
             return head;
         }
         
-        size = size - n - 1; // make size 1 before the node we have to remove
+        size = size - n - 1; // making size 1 before the node we have to remove
         curr = head;
         while (i < size) {
             curr = curr->next;
