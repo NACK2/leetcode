@@ -40,7 +40,7 @@ public:
         
         curr = prev; // prev is the first node of reverse list
         i = 0;
-        while (i < n/2) { // adding the back n/2 elements into vector
+        while (i < n/2) { // add the back n/2 elements into vector
             counts[i] += curr->val;
             curr = curr->next;
             ++i;
