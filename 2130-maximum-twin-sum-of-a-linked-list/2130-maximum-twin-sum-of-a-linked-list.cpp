@@ -17,7 +17,7 @@ public:
         int n = 0;
         vector<int> counts;
         
-        while (curr) { // getting size
+        while (curr) { // get size
             curr = curr->next;
             ++n;
         }
