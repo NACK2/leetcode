@@ -10,7 +10,10 @@ class Solution:
         if not node:
             return -1
 
-        return max(self.getHeight(node.left), self.getHeight(node.right)) + 1
+        leftHeight = self.getHeight(node.left)
+        rightHeight = self.getHeight(node.right)
+
+        return max(leftHeight, rightHeight) + 1
     
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
         if not root:
