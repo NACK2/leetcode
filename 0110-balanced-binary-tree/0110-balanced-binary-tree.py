@@ -8,7 +8,7 @@
 class Solution:
     def getHeight(self, node):
         if not node:
-            return -1
+            return 0
 
         leftHeight = self.getHeight(node.left)
         rightHeight = self.getHeight(node.right)
@@ -19,15 +19,11 @@ class Solution:
         if not root:
             return True
         
-        left = self.getHeight(root.left)
-        right = self.getHeight(root.right)
+        elif abs(self.getHeight(root.right)-self.getHeight(root.left)) > 1:
+            return False;
         
-        if abs(right-left) <= 1 and self.isBalanced(root.left) and self.isBalanced(root.right): 
-            return True
-        
-        return False
+        return self.isBalanced(root.left) and self.isBalanced(root.right)
     
-        
         
         
         
