@@ -9,7 +9,7 @@ class Solution:
         fast = head
         slow = head
         
-        while (head and head.next):
+        while (head and head.next): # no cycle exists if head reaches null
             head = head.next.next
             slow = slow.next
             if (head == slow):
