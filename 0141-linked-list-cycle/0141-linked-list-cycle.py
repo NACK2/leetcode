@@ -6,14 +6,13 @@
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        fast = head;
-        slow = head;
+        nodes = set(); # doing nodes = {} will create empty DICTIONARY instead
         
-        while (fast and fast.next):
-            fast = fast.next.next
-            slow = slow.next
-            if (fast == slow):
+        while (head and head.next):
+            if (head in nodes):
                 return True
+            nodes.add(head)
+            head = head.next
             
         return False
         
