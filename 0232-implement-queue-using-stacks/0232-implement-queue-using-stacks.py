@@ -4,22 +4,21 @@ class MyQueue:
         self.tempStack = []
 
     def push(self, x: int) -> None:
-        while (self.stack):
-            self.tempStack.append(self.stack.pop())
         self.stack.append(x)
-        
-        while (self.tempStack):
-            self.stack.append(self.tempStack.pop())
             
 
     def pop(self) -> int:
-        return self.stack.pop()
-
-    def peek(self) -> int:
+        for i in range(len(self.stack)-1):
+            self.tempStack.append(self.stack.pop())
+        
         ret = self.stack.pop()
-        self.stack.append(ret)
+        while (self.tempStack):
+            self.stack.append(self.tempStack.pop())
         
         return ret
+
+    def peek(self) -> int:
+        return self.stack[0]
 
     def empty(self) -> bool:
         return not self.stack
