@@ -13,7 +13,7 @@ class Solution:
             length += 1
             
         curr = head
-        while i < length//2:
+        while i < length//2: # HAS to be int division
             curr = curr.next
             i = i+1
         
