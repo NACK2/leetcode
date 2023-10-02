@@ -2,20 +2,20 @@ class Solution:
     def longestPalindrome(self, s: str) -> int:
         letterCount = {}
         total = 0
-        highestOddLetter = ''
+        hasOdd = False
         
-        for i in range(len(s)):
-            letterCount[s[i]] = letterCount.get(s[i], 0) + 1
+        for c in s: # get count of each letter
+            letterCount[c] = letterCount.get(c, 0) + 1
         
+        # if even jus add count to total, if odd add count-1 to total
         for c in letterCount:
             if letterCount[c] % 2 == 0: # even
                 total += letterCount[c]
-            elif letterCount[c] >= letterCount.get(highestOddLetter, 0):
-                highestOddLetter = c
-                
-        for c in letterCount:
-            if letterCount[c] % 2 == 1 and c != highestOddLetter: # odd
-                total += letterCount[c] - 1 # for each odd that wasnt max odd value, subtract 1 to it and add it
+            else: # odd
+                hasOdd = True
+                total += letterCount[c] - 1
         
-        return total + letterCount.get(highestOddLetter, 0)
-        
+        if hasOdd:
+            total += 1
+            
+        return total
