@@ -8,7 +8,7 @@ class Solution:
         if not head: return head
         
         curr = head
-        tmpNext = curr.next
+        tmpNext = None
         tmpPrev = None
         
         while curr:
