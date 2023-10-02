@@ -5,7 +5,7 @@
 #         self.next = next
 class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        # since fast goes twice as fast, when it reaches end slow will be at midpoint
+        # since fast goes 2x as fast, when it reaches end, slow will be at midpoint
         
         fast = head
         slow = head
