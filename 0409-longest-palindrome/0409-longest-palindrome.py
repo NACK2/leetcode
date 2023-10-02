@@ -15,7 +15,6 @@ class Solution:
                 hasOdd = True
                 total += letterCount[c] - 1
         
-        if hasOdd:
-            total += 1
+        if hasOdd: total += 1
             
         return total
