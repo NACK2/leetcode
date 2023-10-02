@@ -4,26 +4,21 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-
 class Solution:
-    def getHeight(self, node):
-        if not node:
+    def getHeight(self, root):
+        if not root:
             return 0
-
-        leftHeight = self.getHeight(node.left)
-        rightHeight = self.getHeight(node.right)
-
-        return max(leftHeight, rightHeight) + 1
+        
+        left = self.getHeight(root.left)
+        right = self.getHeight(root.right)
+        
+        return max(left, right) + 1
     
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
         if not root:
             return True
         
-        elif abs(self.getHeight(root.right)-self.getHeight(root.left)) > 1:
-            return False;
+        left = self.getHeight(root.left)
+        right = self.getHeight(root.right)
         
-        return self.isBalanced(root.left) and self.isBalanced(root.right)
-    
-        
-        
-        
+        return abs(right-left) <= 1 and self.isBalanced(root.left) and self.isBalanced(root.right)
