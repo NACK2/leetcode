@@ -1,4 +1,30 @@
 class Solution:
     def addBinary(self, a: str, b: str) -> str:
-        total = int(a, 2) + int(b, 2) # converts a and b into normal base 10 int from base 2 string aka binary
-        return bin(total)[2:] # splicing out the first two chars bc its jus "0b" to signify its binary      
+        a = a[::-1] # reversing bc addition starts from back
+        b = b[::-1]
+        numA, numB, total, carry = 0, 0, 0, 0
+        res = ""
+        
+        for i in range(max(len(a), len(b))):
+            if i < len(a):
+                numA = ord(a[i]) - ord('0') # using ascii values to turn char into int
+            else:
+                numA = 0
+            
+            if i < len(b):
+                numB = ord(b[i]) - ord('0')
+            else:
+                numB = 0
+            
+            total = numA + numB + carry # first iteration carry will be 0 by default
+            res += str(total % 2)
+            carry = total // 2 # either 0 or 1
+        
+        if carry == 1:# last digit had a carry
+            res += "1"
+        
+        return res[::-1]
+            
+            
+
+                
