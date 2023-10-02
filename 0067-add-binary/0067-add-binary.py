@@ -6,15 +6,8 @@ class Solution:
         res = ""
         
         for i in range(max(len(a), len(b))):
-            if i < len(a):
-                numA = int(a[i]) # using ascii values to turn char into int
-            else:
-                numA = 0
-            
-            if i < len(b):
-                numB = ord(b[i]) - ord('0')
-            else:
-                numB = 0
+            numA = int(a[i]) if i < len(a) else 0 # using ascii values to turn char into int
+            numB = int(b[i]) if i < len(b) else 0
             
             total = numA + numB + carry # first iteration carry will be 0 by default
             res += str(total % 2)
