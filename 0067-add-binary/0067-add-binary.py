@@ -7,7 +7,7 @@ class Solution:
         
         for i in range(max(len(a), len(b))):
             if i < len(a):
-                numA = ord(a[i]) - ord('0') # using ascii values to turn char into int
+                numA = int(a[i]) # using ascii values to turn char into int
             else:
                 numA = 0
             
