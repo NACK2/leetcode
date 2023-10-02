@@ -15,7 +15,7 @@ class Solution:
                 
         for c in letterCount:
             if letterCount[c] % 2 == 1 and c != highestOddLetter: # odd
-                total += letterCount[c] - 1
+                total += letterCount[c] - 1 # for each odd that wasnt max odd value, subtract 1 to it and add it
         
         return total + letterCount.get(highestOddLetter, 0)
         
