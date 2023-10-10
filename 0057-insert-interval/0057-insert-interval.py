@@ -4,7 +4,7 @@ class Solution:
         intervalIndex = 0
         
         for i in range(len(intervals)):
-            if newInterval[1] < intervals[i][0]: # nothing overlapping
+            if newInterval[1] < intervals[i][0]: # end of newInterval and start of curr interval dont overlap
                 res.append(newInterval)
                 return res + intervals[i:]
             elif newInterval[0] > intervals[i][1]: # start of newInterval and end of curr interval dont overlap
