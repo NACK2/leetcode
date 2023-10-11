@@ -9,6 +9,8 @@ class Solution:
         else: return int(term1 / term2) # truncate to zero / rounding down
     
     def evalRPN(self, tokens: List[str]) -> int:
+        if len(tokens) == 1: return int(tokens[0])
+        
         stack = []
         tmp, term1, term2 = 0, 0, 0
         
@@ -21,4 +23,4 @@ class Solution:
             else:
                 stack.append(t)
     
-        return int(stack.pop())
+        return stack.pop()
