@@ -3,6 +3,7 @@ class Solution:
         strs.sort()
         n = len(strs)-1
         prefix = ""
+        print(strs)
         
         for i in range(len(strs[0])):
             if strs[0][i] == strs[n][i]: # comparing first and last strings, because list is sorted
