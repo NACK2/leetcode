@@ -16,6 +16,7 @@ var addTwoNumbers = function(l1, l2) {
     
     let carry = 0;
     let tmp = 0;
+    let result = 0;
     
     while (l1 || l2 || carry) {
         tmp = carry;
@@ -29,9 +30,9 @@ var addTwoNumbers = function(l1, l2) {
         }
         
         carry = Math.floor(tmp / 10); // tens digit
-        tmp = tmp % 10; // ones digit
+        result = tmp % 10; // ones digit
         
-        curr.next = new ListNode(tmp);
+        curr.next = new ListNode(result);
         curr = curr.next;
     }
     
