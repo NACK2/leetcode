@@ -11,20 +11,24 @@
  * @return {boolean}
  */
 
-const height = (node) => {
-    if (node === null) {
+function getHeight(root) {
+    if (root === null) {
         return -1;
     }
-    return 1 + Math.max(height(node.left), height(node.right));
+    return 1 + Math.max(getHeight(root.left), getHeight(root.right));
 }
 
 var isBalanced = function(root) {
-    if (root === null) {
+    if (root == null) {
         return true;
-    } else {
-        let diff = Math.abs(height(root.left) - height(root.right));
-        return diff < 2
+    }
+    
+//     let diff = Math.abs(getHeight(root.right) - getHeight(root.left));
+    
+//     return diff <= 1 && isBalanced(root.left) && isBalanced(root.right);
+    
+    let diff = Math.abs(getHeight(root.left) - getHeight(root.right));
+    return diff < 2
             && isBalanced(root.left)
             && isBalanced(root.right);
-    }
 };
