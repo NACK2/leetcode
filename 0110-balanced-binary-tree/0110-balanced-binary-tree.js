@@ -16,7 +16,7 @@ function getHeight(root) {
         return -1;
     }
     
-    return Math.max(getHeight(root.left), right = getHeight(root.right)) + 1;
+    return 1 + Math.max(getHeight(root.left), right = getHeight(root.right));
 }
 
 var isBalanced = function(root) {
