@@ -15,7 +15,8 @@ function getHeight(root) {
     if (root === null) {
         return -1;
     }
-    return 1 + Math.max(getHeight(root.left), getHeight(root.right));
+    
+    return Math.max(getHeight(root.left), right = getHeight(root.right)) + 1;
 }
 
 var isBalanced = function(root) {
@@ -23,12 +24,6 @@ var isBalanced = function(root) {
         return true;
     }
     
-//     let diff = Math.abs(getHeight(root.right) - getHeight(root.left));
-    
-//     return diff <= 1 && isBalanced(root.left) && isBalanced(root.right);
-    
     let diff = Math.abs(getHeight(root.left) - getHeight(root.right));
-    return diff < 2
-            && isBalanced(root.left)
-            && isBalanced(root.right);
+    return diff <= 1 && isBalanced(root.left) && isBalanced(root.right);
 };
