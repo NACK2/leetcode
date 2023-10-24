@@ -14,7 +14,8 @@ class Solution:
         queue.append(root)
         while queue:
             curr = []
-            for i in range(len(queue)):
+            length = len(queue);
+            for i in range(length):
                 tmp = queue.pop(0)
                 curr.append(tmp.val)
                 if tmp.left != None:
